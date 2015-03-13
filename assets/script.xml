@@ -1,0 +1,24 @@
+<data debug="true" lan="es">
+	<screen name="ScreenDemo1" id="0">
+		<objects>
+			<object type="sprite" name="logoSlurm" asset="slurm_logo.png" position="center" properties="x:240,y:400" />
+			<object type="button" name="demo1Btn" asset="button1.svg" over="button1_over.svg" properties="x:240,y:400" />
+			<object type="text" name="testTxt" properties="x:240,y:80" />
+		</objects>
+		<texts>
+			
+		</texts>
+		<tweens>
+			<in>
+				<tween target="logoSlurm" destination="from" duration="1" properties="alpha:1,scaleX:1,scaleY:1" repeat="0" delay="0" ease="Elastic.easeOut" />
+				<tween target="logoSlurm" destination="to" duration="2" properties="y:150" repeat="0" delay="2" />
+			</in>
+		</tweens>
+	</screen>
+	<screen name="ScreenDemo2" id="1">
+		<objects>
+			<object type="sprite" name="logoSlurm" asset="slurm.png" x="117" y="273" />
+		</objects>
+	</screen>
+
+</data>
