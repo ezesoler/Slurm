@@ -1,0 +1,34 @@
+<data debug="true" lan="es">
+	<screen name="ScreenDemo1" id="0">
+		<objects>
+			<object type="sprite" name="logoSlurm" asset="slurm_logo.png" position="center" properties="x:240,y:400" />
+			<object type="button" name="demo1Btn" asset="button1.svg" over="button1_over.svg" properties="x:240,y:400" />
+			<object type="text" name="testTxt" properties="x:80,y:495,width:337">
+				<text lan="es"><![CDATA[
+				Gracias al nuevo invento del Profesor, Fry intentará 
+				encontrar la tapa premiada de la bebida Slurm, la cual 
+				le permitirá conocer al original gusano fiestero Slurm 
+				MacKenzie. La curiosidad de Fry lo lleva a descubrir el 
+				asqueroso secreto que oculta esta bebida, pero su 
+				adicción a Slurm será un gran obstáculo para salvar a 
+				sus amigos y decir la verdad sobre esta bebida.
+				]]></text>
+			</object>
+		</objects>
+		<texts>
+			
+		</texts>
+		<tweens>
+			<in>
+				<tween target="logoSlurm" destination="from" duration="1" properties="alpha:1,scaleX:1,scaleY:1" repeat="0" delay="0" ease="Elastic.easeOut" />
+				<tween target="logoSlurm" destination="to" duration="2" properties="y:150" repeat="0" delay="2" />
+			</in>
+		</tweens>
+	</screen>
+	<screen name="ScreenDemo2" id="1">
+		<objects>
+			<object type="sprite" name="logoSlurm" asset="slurm.png" x="117" y="273" />
+		</objects>
+	</screen>
+
+</data>
