@@ -1,6 +1,10 @@
 package com.slurm;
+import openfl.text.AntiAliasType;
 import openfl.text.Font;
+import openfl.text.TextFieldAutoSize;
+import openfl.text.TextFieldType;
 import openfl.text.TextFormat;
+import openfl.text.TextFormatAlign;
 
 import format.SVG;
 import openfl.Assets;
@@ -30,12 +34,26 @@ class Asset extends Sprite
 		Font.registerFont (DefaultFont);
 		var font = Assets.getFont("fonts/OpenSans-Regular.ttf");
 		if (dataAsset.get('type') == "text") {
-			var textFormat:TextFormat = new TextFormat(font.fontName, 24, 0xFFFFFF);
-			var myText:TextField = new TextField();
-			myText.defaultTextFormat = textFormat;
-			myText.text = "Test Test";
+			var textFormat:TextFormat = new TextFormat();
+			textFormat.font = font.fontName;
+			textFormat.size = 13;
+			textFormat.color = 0xFFFFFF;
+			textFormat.leading = -7;
+			textFormat.align = TextFormatAlign.JUSTIFY;
+			var text:TextField = new TextField();
+			//text.type = TextFieldType.INPUT;
+			text.autoSize = TextFieldAutoSize.CENTER;
+			text.selectable = false;
+			text.multiline = true;
+			text.defaultTextFormat = textFormat;
+			//text.embedFonts = true;
+			for ( objectText in dataAsset.elementsNamed("text") ) {
+				if (objectText.get('lan') == GlobalData.lan) {
+					text.htmlText = objectText.firstChild().nodeValue;
+				}	
+			}
 			var propArrTxt = dataAsset.get('properties').split(',');
-			addChild(myText);
+			addChild(text);
 		}else {
 			var extensionIndex:Int = dataAsset.get('asset').lastIndexOf( '.' );
 			var extension:String = dataAsset.get('asset').substr( extensionIndex + 1, dataAsset.get('asset').length );
